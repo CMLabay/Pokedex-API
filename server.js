@@ -1,1 +1,15 @@
-console.log('hello')
+const express = require('express')
+const morgan = require('morgan')
+
+const app = express()
+
+app.use(morgan('dev'))
+
+app.use((req, res) => {
+    res.send('Hello, butts!')
+})
+
+const PORT = 8001
+app.listen(PORT, () => {
+    console.log(`Server is listening at http://localhost:${PORT}`)
+})
